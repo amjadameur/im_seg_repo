@@ -52,5 +52,5 @@ void Player_interface::gpu_seg() {
 }
 
 void Player_interface::save_im_out(const QString file_name) {
-
+    gray_im.save("../" + file_name);
 }
