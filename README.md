@@ -24,11 +24,11 @@ Enfin **main.cpp** est le programme principal.
 
 ## Utilisation
 
-1) Au laucement du logiciel, l'explorateur des fichiers s'ouvre pour localiser l'image RGB à segmenter.
+1) Au lancement du logiciel, l'explorateur des fichiers s'ouvre pour localiser l'image RGB à segmenter.
 
 2) Ensuite, la segmentation se fait automatiquement sans intervention humaine.
 
-3) A la fin du programme, l'image de sortie générée va être stockée dans ce même repertoire sous le nom "binarisee.jpg".  
+3) A la fin du programme, l'image de sortie générée va être stockée dans ce même répertoire sous le nom "binarisee.jpg".  
  
 
 ## Historique
