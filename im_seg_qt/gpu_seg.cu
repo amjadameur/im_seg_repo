@@ -16,7 +16,12 @@ __global__ void seg_kernel(uchar *dev_gray_im, uchar *dev_green_im, int n_pixels
 // Recupere la composante verte de l'image rgb, ceci permettra de ne pas
 // sur-consommer la memoire du gpu
 void get_green(uchar *green_im, QRgb *rgb_im, int width, int height) {
-
+    for(int i=0; i<width; i++) {
+       for(int j=0; j<height; j++) {
+           int idx = j*width + i;
+           green_im[idx] = (uchar) GET_GREEN(rgb_im[idx]);
+       }
+   }
 }
 
 extern "C"
