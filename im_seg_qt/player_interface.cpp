@@ -48,7 +48,15 @@ void Player_interface::cpu_seg() {
 }
 
 void Player_interface::gpu_seg() {
+    // Recuperation des pointeurs de l'image d'entree et de sortie
+    rgb_ptr = (QRgb*) rgb_im.bits();
+    gray_ptr = (uchar*) malloc(width*height*sizeof(uchar));
 
+    // Lancement de la segmentation
+    gpu_im_seg(gray_ptr, rgb_ptr, width, height);
+
+    // Creation de l'image binarise
+    gray_im = QImage(gray_ptr, width, height, width, QImage::Format::Format_Grayscale8);
 }
 
 void Player_interface::save_im_out(const QString file_name) {

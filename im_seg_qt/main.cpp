@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     cout << "int main :: segmentation avec un GPU nvidia"<< endl;
     timer.start();
-    player.cpu_seg();
+    player.gpu_seg();
     cout << "int main :: la segmentation de l'image a duré : " << timer.elapsed() << " ms"<< endl;
 
     cout << "int main :: enregistrement de l'image binarisee"<< endl;
