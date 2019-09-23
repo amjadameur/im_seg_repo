@@ -14,8 +14,6 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    im_seg_win w;
-    w.show();
 
     Player_interface player;
     QElapsedTimer timer;
@@ -37,5 +35,5 @@ int main(int argc, char *argv[])
     cout << "int main :: enregistrement de l'image binarisee"<< endl;
     player.save_im_out("binarisee.jpg");
 
-    return a.exec();
+    return 0;
 }
