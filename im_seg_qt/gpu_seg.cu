@@ -10,7 +10,10 @@ typedef unsigned char uchar;
 typedef unsigned int QRgb;
 
 __global__ void seg_kernel(uchar *dev_gray_im, uchar *dev_green_im, int n_pixels) {
-
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx < n_pixels) {
+        dev_gray_im[idx] =  (dev_green_im[idx] > GREEN_TRESH) ? WHITE : BLACK;
+    }
 }
 
 // Recupere la composante verte de l'image rgb, ceci permettra de ne pas
